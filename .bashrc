@@ -1,5 +1,7 @@
 sudo apt update
-sudo apt install apt-transport-https curl snap vim
+sudo apt install apt-transport-https curl snap vim xclip
+
+alias "xcp=xclip -selection clipboard"
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
