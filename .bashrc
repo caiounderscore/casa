@@ -12,15 +12,17 @@ alias egrep='egrep --color=auto'
 alias ls='ls --color=auto'
 
 
-_GREEN=$(tput setaf 2)                           
-_BLUE=$(tput setaf 4) 
-_RED=$(tput setaf 1)  
-_CYAN=$(tput setaf 6)
-_RESET=$(tput sgr0)   
-_BOLD=$(tput bold)
-_WHITE=$(tput setaf 7)
+_RED="\e[1;31m"
+_BLUE="\e[34m"
+_GREEN="\e[1;32m"
+_CYAN="\e[1;36m"
+_BG_RED="\e[1;41m"
+_DATE_FORMAT="%H:%M:%S"
+_RESET="\e[0m"   
+#_BOLD=$(tput bold)
+_WHITE="\e[1;37m"
 
-export PS1="${_CYAN}\w${_BLUE} - ${_RED}\D{%H:%M:%S}${_BOLD} - exit:\$? - ${_GREEN}\$${_WHITE}"
+export PS1="${_CYAN}\w${_BLUE} - ${_RED}\D{${_DATE_FORMAT}}${_RESET} ${_BG_RED} exit:\$?${_RESET} ${_GREEN}\$ ${_WHITE}"
 
 
 #/usr/bin/powerline-daemon -q
